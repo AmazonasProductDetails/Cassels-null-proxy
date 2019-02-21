@@ -7,11 +7,13 @@ const path = require('path');
 var prox = express();
 
 prox.use(bodyParser.json());
+prox.use(express.static(path.join(__dirname, '../client')));
 prox.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
 });
+
 
 function serve(req, res){
     axios.get('http://127.0.0.1:3000/api/recs')

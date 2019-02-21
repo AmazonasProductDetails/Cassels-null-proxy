@@ -16,7 +16,7 @@ prox.use(function(req, res, next) {
 
 
 function serve(req, res){
-    axios.get('http://ec2-3-91-242-160.compute-1.amazonaws.com:1337/api/recs')
+    axios.get('http://ec2-3-91-242-160.compute-1.amazonaws.com:3000/api/recs')
     .then((result)=>{
         console.log('got data from remote');
         res.send(result.data)
